@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e8f5e9">
+<title>18TRIP ペア名リスト</title>
+<style>
+:root{--green:#4f936b;--dark:#285b43;--line:#dceade;--muted:#718579}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#f6faf6;color:#294438;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+header{padding:22px 14px 14px;text-align:center;background:#e8f5e9}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--green)}
+h1{font-size:22px;line-height:1.3;margin:5px 0;color:var(--dark)}
+.subtitle{font-size:12px;color:var(--muted);margin:0}
+main{width:min(900px,calc(100% - 20px));margin:12px auto 30px}
+.search-panel{position:sticky;top:0;z-index:2;background:#f6faf6;padding:5px 0 10px}
+.search-box{display:flex;gap:8px;align-items:center;background:white;border:1px solid var(--line);border-radius:11px;padding:8px 10px}
+.search-icon{color:var(--green);font-size:18px;line-height:1}
+input{display:block;width:100%;min-width:0;border:0;outline:0;background:transparent;color:#294438;font:inherit;font-size:16px;padding:3px 0;appearance:none;-webkit-appearance:none}
+input::placeholder{color:#9aaa9e}
+#clear{flex:0 0 auto;border:0;border-radius:7px;background:#e8f5e9;color:var(--dark);padding:7px 9px;font-size:12px}
+.meta{display:flex;justify-content:space-between;padding:7px 3px 0;font-size:11px;color:var(--muted)}
+#count{font-weight:700;color:var(--dark)}
+.table-wrap{overflow:hidden;border:1px solid var(--line);border-radius:10px;background:white}
+table{border-collapse:collapse;width:100%;table-layout:fixed}
+thead th{background:#edf6ee;color:var(--dark);font-size:11px;text-align:left;padding:9px 10px;font-weight:700}
+thead th:first-child{width:48%}
+thead th:last-child{width:52%}
+tbody tr{border-top:1px solid #edf2ed}
+tbody tr:nth-child(even){background:#fbfdfb}
+td{padding:9px 10px;vertical-align:middle;overflow-wrap:anywhere;word-break:normal}
+.chars{font-size:12px;line-height:1.45;color:#60776a}
+.times{color:#9aaa9e;white-space:nowrap}
+.pair-name{font-size:13px;line-height:1.45;font-weight:700;color:var(--dark)}
+#no-results{display:none;text-align:center;padding:26px 12px;color:var(--muted);font-size:13px}
+footer{text-align:center;color:#9aaa9e;font-size:10px;padding:0 10px 20px}
+@media(max-width:480px){
+ header{padding:18px 12px 12px}
+ h1{font-size:20px}
+ main{width:calc(100% - 16px);margin-top:8px}
+ thead th{padding:8px 7px;font-size:10px}
+ thead th:first-child{width:46%}
+ thead th:last-child{width:54%}
+ td{padding:8px 7px}
+ .chars{font-size:11px}
+ .pair-name{font-size:12px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">18TRIP · PAIR NAME LIST</div>
+ <h1>ペア名リスト</h1>
+ <p class="subtitle">キャラクター名・ペア名から検索できます</p>
+</header>
+<main>
+ <div class="search-panel">
+  <div class="search-box">
+   <span class="search-icon" aria-hidden="true">⌕</span>
+   <input id="search" type="search" placeholder="キャラクター名・ペア名で検索" autocomplete="off" autocapitalize="off" spellcheck="false">
+   <button id="clear" type="button">クリア</button>
+  </div>
+  <div class="meta"><span>全190組</span><span id="count" aria-live="polite">190件表示中</span></div>
+ </div>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>キャラクター</th><th>ペア名</th></tr></thead>
+   <tbody id="pair-list">
+<tr class="pair-row" data-search="01_02 西園練牙 大黒可不可 しゅうまいパパ〜ず"><td class="chars">西園練牙<span class="times"> × </span>大黒可不可</td><td class="pair-name">しゅうまいパパ〜ず</td></tr>
+<tr class="pair-row" data-search="01_03 西園練牙 叢雲添 どうやら友だちっぽい"><td class="chars">西園練牙<span class="times"> × </span>叢雲添</td><td class="pair-name">どうやら友だちっぽい</td></tr>
+<tr class="pair-row" data-search="01_04 西園練牙 神名雪風 ぽゆぽゆブラザーズ"><td class="chars">西園練牙<span class="times"> × </span>神名雪風</td><td class="pair-name">ぽゆぽゆブラザーズ</td></tr>
+<tr class="pair-row" data-search="01_05 西園練牙 鹿礼光 かりそめの宿縁"><td class="chars">西園練牙<span class="times"> × </span>鹿礼光</td><td class="pair-name">かりそめの宿縁</td></tr>
+<tr class="pair-row" data-search="01_06 西園練牙 五十竹あく太 たき火囲みキャンパーズ"><td class="chars">西園練牙<span class="times"> × </span>五十竹あく太</td><td class="pair-name">たき火囲みキャンパーズ</td></tr>
+<tr class="pair-row" data-search="01_07 西園練牙 衣川季肋 ハイコンテクスト折り紙部"><td class="chars">西園練牙<span class="times"> × </span>衣川季肋</td><td class="pair-name">ハイコンテクスト折り紙部</td></tr>
+<tr class="pair-row" data-search="01_08 西園練牙 斜木七基 社内サッカー部"><td class="chars">西園練牙<span class="times"> × </span>斜木七基</td><td class="pair-name">社内サッカー部</td></tr>
+<tr class="pair-row" data-search="01_09 西園練牙 輝矢宗氏 ハイパー紙力士研究ラボ"><td class="chars">西園練牙<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">ハイパー紙力士研究ラボ</td></tr>
+<tr class="pair-row" data-search="01_10 西園練牙 久楽間潮 まさかのモデル先輩後輩"><td class="chars">西園練牙<span class="times"> × </span>久楽間潮</td><td class="pair-name">まさかのモデル先輩後輩</td></tr>
+<tr class="pair-row" data-search="01_11 西園練牙 北片來人 パーチーフレンズ"><td class="chars">西園練牙<span class="times"> × </span>北片來人</td><td class="pair-name">パーチーフレンズ</td></tr>
+<tr class="pair-row" data-search="01_12 西園練牙 畔川幾成 校閲なぁぜなぁぜ"><td class="chars">西園練牙<span class="times"> × </span>畔川幾成</td><td class="pair-name">校閲なぁぜなぁぜ</td></tr>
+<tr class="pair-row" data-search="01_13 西園練牙 夏焼千弥 アルファダズラーズ"><td class="chars">西園練牙<span class="times"> × </span>夏焼千弥</td><td class="pair-name">アルファダズラーズ</td></tr>
+<tr class="pair-row" data-search="01_14 西園練牙 木ノ内太緒 倹約ポイ活仲間"><td class="chars">西園練牙<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">倹約ポイ活仲間</td></tr>
+<tr class="pair-row" data-search="01_15 西園練牙 百目鬼潜 は虫類を愛でる会"><td class="chars">西園練牙<span class="times"> × </span>百目鬼潜</td><td class="pair-name">は虫類を愛でる会</td></tr>
+<tr class="pair-row" data-search="01_16 西園練牙 蜂乃屋凪 ゆるふわガーデニング教室"><td class="chars">西園練牙<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">ゆるふわガーデニング教室</td></tr>
+<tr class="pair-row" data-search="01_17 西園練牙 白光糖衣 オレ様攻略対象"><td class="chars">西園練牙<span class="times"> × </span>白光糖衣</td><td class="pair-name">オレ様攻略対象</td></tr>
+<tr class="pair-row" data-search="01_18 西園練牙 白光琉衣 お洒強くなりたいClub"><td class="chars">西園練牙<span class="times"> × </span>白光琉衣</td><td class="pair-name">お洒強くなりたいClub</td></tr>
+<tr class="pair-row" data-search="01_19 西園練牙 棗夜鷹 バードウォッチング仲間"><td class="chars">西園練牙<span class="times"> × </span>棗夜鷹</td><td class="pair-name">バードウォッチング仲間</td></tr>
+<tr class="pair-row" data-search="01_20 西園練牙 夜半子タろ まんまんケータリング"><td class="chars">西園練牙<span class="times"> × </span>夜半子タろ</td><td class="pair-name">まんまんケータリング</td></tr>
+<tr class="pair-row" data-search="02_03 大黒可不可 叢雲添 釣り人と寿司職人"><td class="chars">大黒可不可<span class="times"> × </span>叢雲添</td><td class="pair-name">釣り人と寿司職人</td></tr>
+<tr class="pair-row" data-search="02_04 大黒可不可 神名雪風 あめゆきサンド"><td class="chars">大黒可不可<span class="times"> × </span>神名雪風</td><td class="pair-name">あめゆきサンド</td></tr>
+<tr class="pair-row" data-search="02_05 大黒可不可 鹿礼光 エリートフィクサーズ"><td class="chars">大黒可不可<span class="times"> × </span>鹿礼光</td><td class="pair-name">エリートフィクサーズ</td></tr>
+<tr class="pair-row" data-search="02_06 大黒可不可 五十竹あく太 愛犬ムービープロジェクト"><td class="chars">大黒可不可<span class="times"> × </span>五十竹あく太</td><td class="pair-name">愛犬ムービープロジェクト</td></tr>
+<tr class="pair-row" data-search="02_07 大黒可不可 衣川季肋 画家とパトロン"><td class="chars">大黒可不可<span class="times"> × </span>衣川季肋</td><td class="pair-name">画家とパトロン</td></tr>
+<tr class="pair-row" data-search="02_08 大黒可不可 斜木七基 同じ穴の同担"><td class="chars">大黒可不可<span class="times"> × </span>斜木七基</td><td class="pair-name">同じ穴の同担</td></tr>
+<tr class="pair-row" data-search="02_09 大黒可不可 輝矢宗氏 ゆるトレジム友組"><td class="chars">大黒可不可<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">ゆるトレジム友組</td></tr>
+<tr class="pair-row" data-search="02_10 大黒可不可 久楽間潮 ロボメンテナンス師弟"><td class="chars">大黒可不可<span class="times"> × </span>久楽間潮</td><td class="pair-name">ロボメンテナンス師弟</td></tr>
+<tr class="pair-row" data-search="02_11 大黒可不可 北片來人 雲の上の経営層"><td class="chars">大黒可不可<span class="times"> × </span>北片來人</td><td class="pair-name">雲の上の経営層</td></tr>
+<tr class="pair-row" data-search="02_12 大黒可不可 畔川幾成 定期メンテナンサー"><td class="chars">大黒可不可<span class="times"> × </span>畔川幾成</td><td class="pair-name">定期メンテナンサー</td></tr>
+<tr class="pair-row" data-search="02_13 大黒可不可 夏焼千弥 プチ接待ダンスレッスン"><td class="chars">大黒可不可<span class="times"> × </span>夏焼千弥</td><td class="pair-name">プチ接待ダンスレッスン</td></tr>
+<tr class="pair-row" data-search="02_14 大黒可不可 木ノ内太緒 社内ゲーム開発室"><td class="chars">大黒可不可<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">社内ゲーム開発室</td></tr>
+<tr class="pair-row" data-search="02_15 大黒可不可 百目鬼潜 ジャズ名盤愛好家の集い"><td class="chars">大黒可不可<span class="times"> × </span>百目鬼潜</td><td class="pair-name">ジャズ名盤愛好家の集い</td></tr>
+<tr class="pair-row" data-search="02_16 大黒可不可 蜂乃屋凪 まったり釣り仲間"><td class="chars">大黒可不可<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">まったり釣り仲間</td></tr>
+<tr class="pair-row" data-search="02_17 大黒可不可 白光糖衣 タロット占い秘密クラブ"><td class="chars">大黒可不可<span class="times"> × </span>白光糖衣</td><td class="pair-name">タロット占い秘密クラブ</td></tr>
+<tr class="pair-row" data-search="02_18 大黒可不可 白光琉衣 ホバーボード教室"><td class="chars">大黒可不可<span class="times"> × </span>白光琉衣</td><td class="pair-name">ホバーボード教室</td></tr>
+<tr class="pair-row" data-search="02_19 大黒可不可 棗夜鷹 半兵衛ファンコミュニティ"><td class="chars">大黒可不可<span class="times"> × </span>棗夜鷹</td><td class="pair-name">半兵衛ファンコミュニティ</td></tr>
+<tr class="pair-row" data-search="02_20 大黒可不可 夜半子タろ 世界征服同盟"><td class="chars">大黒可不可<span class="times"> × </span>夜半子タろ</td><td class="pair-name">世界征服同盟</td></tr>
+<tr class="pair-row" data-search="03_04 叢雲添 神名雪風 構いたがり兄と懐かない弟"><td class="chars">叢雲添<span class="times"> × </span>神名雪風</td><td class="pair-name">構いたがり兄と懐かない弟</td></tr>
+<tr class="pair-row" data-search="03_05 叢雲添 鹿礼光 雷雲の契約"><td class="chars">叢雲添<span class="times"> × </span>鹿礼光</td><td class="pair-name">雷雲の契約</td></tr>
+<tr class="pair-row" data-search="03_06 叢雲添 五十竹あく太 悪いオトコ育成教室"><td class="chars">叢雲添<span class="times"> × </span>五十竹あく太</td><td class="pair-name">悪いオトコ育成教室</td></tr>
+<tr class="pair-row" data-search="03_07 叢雲添 衣川季肋 栄養剤トレード"><td class="chars">叢雲添<span class="times"> × </span>衣川季肋</td><td class="pair-name">栄養剤トレード</td></tr>
+<tr class="pair-row" data-search="03_08 叢雲添 斜木七基 仲良しショッピング"><td class="chars">叢雲添<span class="times"> × </span>斜木七基</td><td class="pair-name">仲良しショッピング</td></tr>
+<tr class="pair-row" data-search="03_09 叢雲添 輝矢宗氏 古きお家柄ゆえ"><td class="chars">叢雲添<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">古きお家柄ゆえ</td></tr>
+<tr class="pair-row" data-search="03_10 叢雲添 久楽間潮 汚いオトナ断固拒否"><td class="chars">叢雲添<span class="times"> × </span>久楽間潮</td><td class="pair-name">汚いオトナ断固拒否</td></tr>
+<tr class="pair-row" data-search="03_11 叢雲添 北片來人 銭湯ラバーズ"><td class="chars">叢雲添<span class="times"> × </span>北片來人</td><td class="pair-name">銭湯ラバーズ</td></tr>
+<tr class="pair-row" data-search="03_12 叢雲添 畔川幾成 神業パルクールチャレンジ"><td class="chars">叢雲添<span class="times"> × </span>畔川幾成</td><td class="pair-name">神業パルクールチャレンジ</td></tr>
+<tr class="pair-row" data-search="03_13 叢雲添 夏焼千弥 HAMAツのダンス番長ズ"><td class="chars">叢雲添<span class="times"> × </span>夏焼千弥</td><td class="pair-name">HAMAツのダンス番長ズ</td></tr>
+<tr class="pair-row" data-search="03_14 叢雲添 木ノ内太緒 ノーカラー連合"><td class="chars">叢雲添<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">ノーカラー連合</td></tr>
+<tr class="pair-row" data-search="03_15 叢雲添 百目鬼潜 クワイエット・ドライブ"><td class="chars">叢雲添<span class="times"> × </span>百目鬼潜</td><td class="pair-name">クワイエット・ドライブ</td></tr>
+<tr class="pair-row" data-search="03_16 叢雲添 蜂乃屋凪 ボタニカルドクター"><td class="chars">叢雲添<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">ボタニカルドクター</td></tr>
+<tr class="pair-row" data-search="03_17 叢雲添 白光糖衣 占い拒絶戦争"><td class="chars">叢雲添<span class="times"> × </span>白光糖衣</td><td class="pair-name">占い拒絶戦争</td></tr>
+<tr class="pair-row" data-search="03_18 叢雲添 白光琉衣 御朱印巡りツアー"><td class="chars">叢雲添<span class="times"> × </span>白光琉衣</td><td class="pair-name">御朱印巡りツアー</td></tr>
+<tr class="pair-row" data-search="03_19 叢雲添 棗夜鷹 ご贔屓さん同士"><td class="chars">叢雲添<span class="times"> × </span>棗夜鷹</td><td class="pair-name">ご贔屓さん同士</td></tr>
+<tr class="pair-row" data-search="03_20 叢雲添 夜半子タろ エスケープ・バディ"><td class="chars">叢雲添<span class="times"> × </span>夜半子タろ</td><td class="pair-name">エスケープ・バディ</td></tr>
+<tr class="pair-row" data-search="04_05 神名雪風 鹿礼光 餃子も世話も焼かれつつ"><td class="chars">神名雪風<span class="times"> × </span>鹿礼光</td><td class="pair-name">餃子も世話も焼かれつつ</td></tr>
+<tr class="pair-row" data-search="04_06 神名雪風 五十竹あく太 おやさい食育中"><td class="chars">神名雪風<span class="times"> × </span>五十竹あく太</td><td class="pair-name">おやさい食育中</td></tr>
+<tr class="pair-row" data-search="04_07 神名雪風 衣川季肋 アナログ絵画教室"><td class="chars">神名雪風<span class="times"> × </span>衣川季肋</td><td class="pair-name">アナログ絵画教室</td></tr>
+<tr class="pair-row" data-search="04_08 神名雪風 斜木七基 クラシック選曲相談"><td class="chars">神名雪風<span class="times"> × </span>斜木七基</td><td class="pair-name">クラシック選曲相談</td></tr>
+<tr class="pair-row" data-search="04_09 神名雪風 輝矢宗氏 おじいちゃん倶楽部"><td class="chars">神名雪風<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">おじいちゃん倶楽部</td></tr>
+<tr class="pair-row" data-search="04_10 神名雪風 久楽間潮 キッチンは俺らの縄張り"><td class="chars">神名雪風<span class="times"> × </span>久楽間潮</td><td class="pair-name">キッチンは俺らの縄張り</td></tr>
+<tr class="pair-row" data-search="04_11 神名雪風 北片來人 ハイスペクラスメイツ"><td class="chars">神名雪風<span class="times"> × </span>北片來人</td><td class="pair-name">ハイスペクラスメイツ</td></tr>
+<tr class="pair-row" data-search="04_12 神名雪風 畔川幾成 氷属性男子たち"><td class="chars">神名雪風<span class="times"> × </span>畔川幾成</td><td class="pair-name">氷属性男子たち</td></tr>
+<tr class="pair-row" data-search="04_13 神名雪風 夏焼千弥 dazzleコンサル講師"><td class="chars">神名雪風<span class="times"> × </span>夏焼千弥</td><td class="pair-name">dazzleコンサル講師</td></tr>
+<tr class="pair-row" data-search="04_14 神名雪風 木ノ内太緒 誇り高きカードゲーマーズ"><td class="chars">神名雪風<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">誇り高きカードゲーマーズ</td></tr>
+<tr class="pair-row" data-search="04_15 神名雪風 百目鬼潜 クラシックを語ろう"><td class="chars">神名雪風<span class="times"> × </span>百目鬼潜</td><td class="pair-name">クラシックを語ろう</td></tr>
+<tr class="pair-row" data-search="04_16 神名雪風 蜂乃屋凪 クセ強画伯コンビ"><td class="chars">神名雪風<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">クセ強画伯コンビ</td></tr>
+<tr class="pair-row" data-search="04_17 神名雪風 白光糖衣 認定糖衣ガーディアン"><td class="chars">神名雪風<span class="times"> × </span>白光糖衣</td><td class="pair-name">認定糖衣ガーディアン</td></tr>
+<tr class="pair-row" data-search="04_18 神名雪風 白光琉衣 騎士団長叙任式"><td class="chars">神名雪風<span class="times"> × </span>白光琉衣</td><td class="pair-name">騎士団長叙任式</td></tr>
+<tr class="pair-row" data-search="04_19 神名雪風 棗夜鷹 年長組のまなざし"><td class="chars">神名雪風<span class="times"> × </span>棗夜鷹</td><td class="pair-name">年長組のまなざし</td></tr>
+<tr class="pair-row" data-search="04_20 神名雪風 夜半子タろ ユニーク点心一派"><td class="chars">神名雪風<span class="times"> × </span>夜半子タろ</td><td class="pair-name">ユニーク点心一派</td></tr>
+<tr class="pair-row" data-search="05_06 鹿礼光 五十竹あく太 アニマルレスキュー隊"><td class="chars">鹿礼光<span class="times"> × </span>五十竹あく太</td><td class="pair-name">アニマルレスキュー隊</td></tr>
+<tr class="pair-row" data-search="05_07 鹿礼光 衣川季肋 花文字師候補生"><td class="chars">鹿礼光<span class="times"> × </span>衣川季肋</td><td class="pair-name">花文字師候補生</td></tr>
+<tr class="pair-row" data-search="05_08 鹿礼光 斜木七基 民族楽器セッション"><td class="chars">鹿礼光<span class="times"> × </span>斜木七基</td><td class="pair-name">民族楽器セッション</td></tr>
+<tr class="pair-row" data-search="05_09 鹿礼光 輝矢宗氏 生徒会の系譜"><td class="chars">鹿礼光<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">生徒会の系譜</td></tr>
+<tr class="pair-row" data-search="05_10 鹿礼光 久楽間潮 チャイナスイーツ考案会"><td class="chars">鹿礼光<span class="times"> × </span>久楽間潮</td><td class="pair-name">チャイナスイーツ考案会</td></tr>
+<tr class="pair-row" data-search="05_11 鹿礼光 北片來人 お祭り男ども"><td class="chars">鹿礼光<span class="times"> × </span>北片來人</td><td class="pair-name">お祭り男ども</td></tr>
+<tr class="pair-row" data-search="05_12 鹿礼光 畔川幾成 卓上コミュニケイション"><td class="chars">鹿礼光<span class="times"> × </span>畔川幾成</td><td class="pair-name">卓上コミュニケイション</td></tr>
+<tr class="pair-row" data-search="05_13 鹿礼光 夏焼千弥 りんちぃギャルズの絆"><td class="chars">鹿礼光<span class="times"> × </span>夏焼千弥</td><td class="pair-name">りんちぃギャルズの絆</td></tr>
+<tr class="pair-row" data-search="05_14 鹿礼光 木ノ内太緒 姉の推しがイイ奴な件"><td class="chars">鹿礼光<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">姉の推しがイイ奴な件</td></tr>
+<tr class="pair-row" data-search="05_15 鹿礼光 百目鬼潜 ロイヤル中国茶タイム"><td class="chars">鹿礼光<span class="times"> × </span>百目鬼潜</td><td class="pair-name">ロイヤル中国茶タイム</td></tr>
+<tr class="pair-row" data-search="05_16 鹿礼光 蜂乃屋凪 専属フラワーアーティスト"><td class="chars">鹿礼光<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">専属フラワーアーティスト</td></tr>
+<tr class="pair-row" data-search="05_17 鹿礼光 白光糖衣 専属風水アドバイザー"><td class="chars">鹿礼光<span class="times"> × </span>白光糖衣</td><td class="pair-name">専属風水アドバイザー</td></tr>
+<tr class="pair-row" data-search="05_18 鹿礼光 白光琉衣 ビバ！格闘技観戦"><td class="chars">鹿礼光<span class="times"> × </span>白光琉衣</td><td class="pair-name">ビバ！格闘技観戦</td></tr>
+<tr class="pair-row" data-search="05_19 鹿礼光 棗夜鷹 闘牌伝〜REKKA〜"><td class="chars">鹿礼光<span class="times"> × </span>棗夜鷹</td><td class="pair-name">闘牌伝〜REKKA〜</td></tr>
+<tr class="pair-row" data-search="05_20 鹿礼光 夜半子タろ 違法出店WANTED !"><td class="chars">鹿礼光<span class="times"> × </span>夜半子タろ</td><td class="pair-name">違法出店WANTED !</td></tr>
+<tr class="pair-row" data-search="06_07 五十竹あく太 衣川季肋 あさって通訳マン"><td class="chars">五十竹あく太<span class="times"> × </span>衣川季肋</td><td class="pair-name">あさって通訳マン</td></tr>
+<tr class="pair-row" data-search="06_08 五十竹あく太 斜木七基 おでん組よ永遠に"><td class="chars">五十竹あく太<span class="times"> × </span>斜木七基</td><td class="pair-name">おでん組よ永遠に</td></tr>
+<tr class="pair-row" data-search="06_09 五十竹あく太 輝矢宗氏 はっけよい輝矢部屋"><td class="chars">五十竹あく太<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">はっけよい輝矢部屋</td></tr>
+<tr class="pair-row" data-search="06_10 五十竹あく太 久楽間潮 ポジティブに腕押し"><td class="chars">五十竹あく太<span class="times"> × </span>久楽間潮</td><td class="pair-name">ポジティブに腕押し</td></tr>
+<tr class="pair-row" data-search="06_11 五十竹あく太 北片來人 よなよなラーメンブロス"><td class="chars">五十竹あく太<span class="times"> × </span>北片來人</td><td class="pair-name">よなよなラーメンブロス</td></tr>
+<tr class="pair-row" data-search="06_12 五十竹あく太 畔川幾成 チャリダッシュー味"><td class="chars">五十竹あく太<span class="times"> × </span>畔川幾成</td><td class="pair-name">チャリダッシュー味</td></tr>
+<tr class="pair-row" data-search="06_13 五十竹あく太 夏焼千弥 映え絶景バズ狂い"><td class="chars">五十竹あく太<span class="times"> × </span>夏焼千弥</td><td class="pair-name">映え絶景バズ狂い</td></tr>
+<tr class="pair-row" data-search="06_14 五十竹あく太 木ノ内太緒 熱血！あく太ナイン"><td class="chars">五十竹あく太<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">熱血！あく太ナイン</td></tr>
+<tr class="pair-row" data-search="06_15 五十竹あく太 百目鬼潜 廃墟巡りデカダンス"><td class="chars">五十竹あく太<span class="times"> × </span>百目鬼潜</td><td class="pair-name">廃墟巡りデカダンス</td></tr>
+<tr class="pair-row" data-search="06_16 五十竹あく太 蜂乃屋凪 ゾンビ映画フリーク"><td class="chars">五十竹あく太<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">ゾンビ映画フリーク</td></tr>
+<tr class="pair-row" data-search="06_17 五十竹あく太 白光糖衣 妄想下見デイズ"><td class="chars">五十竹あく太<span class="times"> × </span>白光糖衣</td><td class="pair-name">妄想下見デイズ</td></tr>
+<tr class="pair-row" data-search="06_18 五十竹あく太 白光琉衣 OYA×KOBU"><td class="chars">五十竹あく太<span class="times"> × </span>白光琉衣</td><td class="pair-name">OYA×KOBU</td></tr>
+<tr class="pair-row" data-search="06_19 五十竹あく太 棗夜鷹 快眠お昼寝部"><td class="chars">五十竹あく太<span class="times"> × </span>棗夜鷹</td><td class="pair-name">快眠お昼寝部</td></tr>
+<tr class="pair-row" data-search="06_20 五十竹あく太 夜半子タろ 369デリバリー"><td class="chars">五十竹あく太<span class="times"> × </span>夜半子タろ</td><td class="pair-name">369デリバリー</td></tr>
+<tr class="pair-row" data-search="07_08 衣川季肋 斜木七基 非常階段のチル友"><td class="chars">衣川季肋<span class="times"> × </span>斜木七基</td><td class="pair-name">非常階段のチル友</td></tr>
+<tr class="pair-row" data-search="07_09 衣川季肋 輝矢宗氏 妹溺愛同盟"><td class="chars">衣川季肋<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">妹溺愛同盟</td></tr>
+<tr class="pair-row" data-search="07_10 衣川季肋 久楽間潮 イラリクいいですか"><td class="chars">衣川季肋<span class="times"> × </span>久楽間潮</td><td class="pair-name">イラリクいいですか</td></tr>
+<tr class="pair-row" data-search="07_11 衣川季肋 北片來人 格闘技体型うずうず"><td class="chars">衣川季肋<span class="times"> × </span>北片來人</td><td class="pair-name">格闘技体型うずうず</td></tr>
+<tr class="pair-row" data-search="07_12 衣川季肋 畔川幾成 仏像とメカのふれあい"><td class="chars">衣川季肋<span class="times"> × </span>畔川幾成</td><td class="pair-name">仏像とメカのふれあい</td></tr>
+<tr class="pair-row" data-search="07_13 衣川季肋 夏焼千弥 TuRyStAガチ勢"><td class="chars">衣川季肋<span class="times"> × </span>夏焼千弥</td><td class="pair-name">TuRyStAガチ勢</td></tr>
+<tr class="pair-row" data-search="07_14 衣川季肋 木ノ内太緒 ポケベル解読要員"><td class="chars">衣川季肋<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">ポケベル解読要員</td></tr>
+<tr class="pair-row" data-search="07_15 衣川季肋 百目鬼潜 西洋美術愛好会"><td class="chars">衣川季肋<span class="times"> × </span>百目鬼潜</td><td class="pair-name">西洋美術愛好会</td></tr>
+<tr class="pair-row" data-search="07_16 衣川季肋 蜂乃屋凪 同時刻エブリナイトJPNで"><td class="chars">衣川季肋<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">同時刻エブリナイトJPNで</td></tr>
+<tr class="pair-row" data-search="07_17 衣川季肋 白光糖衣 キロちゃん応援団"><td class="chars">衣川季肋<span class="times"> × </span>白光糖衣</td><td class="pair-name">キロちゃん応援団</td></tr>
+<tr class="pair-row" data-search="07_18 衣川季肋 白光琉衣 ガキ大将の庇護下"><td class="chars">衣川季肋<span class="times"> × </span>白光琉衣</td><td class="pair-name">ガキ大将の庇護下</td></tr>
+<tr class="pair-row" data-search="07_19 衣川季肋 棗夜鷹 趙雲のお気に入り"><td class="chars">衣川季肋<span class="times"> × </span>棗夜鷹</td><td class="pair-name">趙雲のお気に入り</td></tr>
+<tr class="pair-row" data-search="07_20 衣川季肋 夜半子タろ ビビッドコーディネーター"><td class="chars">衣川季肋<span class="times"> × </span>夜半子タろ</td><td class="pair-name">ビビッドコーディネーター</td></tr>
+<tr class="pair-row" data-search="08_09 斜木七基 輝矢宗氏 オレたちタグラーズ"><td class="chars">斜木七基<span class="times"> × </span>輝矢宗氏</td><td class="pair-name">オレたちタグラーズ</td></tr>
+<tr class="pair-row" data-search="08_10 斜木七基 久楽間潮 秘密のスイートヘイト"><td class="chars">斜木七基<span class="times"> × </span>久楽間潮</td><td class="pair-name">秘密のスイートヘイト</td></tr>
+<tr class="pair-row" data-search="08_11 斜木七基 北片來人 バンド名募集中"><td class="chars">斜木七基<span class="times"> × </span>北片來人</td><td class="pair-name">バンド名募集中</td></tr>
+<tr class="pair-row" data-search="08_12 斜木七基 畔川幾成 心拍数マネジメント"><td class="chars">斜木七基<span class="times"> × </span>畔川幾成</td><td class="pair-name">心拍数マネジメント</td></tr>
+<tr class="pair-row" data-search="08_13 斜木七基 夏焼千弥 スキンケア男子"><td class="chars">斜木七基<span class="times"> × </span>夏焼千弥</td><td class="pair-name">スキンケア男子</td></tr>
+<tr class="pair-row" data-search="08_14 斜木七基 木ノ内太緒 カラオケ同好会"><td class="chars">斜木七基<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">カラオケ同好会</td></tr>
+<tr class="pair-row" data-search="08_15 斜木七基 百目鬼潜 遠縁の絆"><td class="chars">斜木七基<span class="times"> × </span>百目鬼潜</td><td class="pair-name">遠縁の絆</td></tr>
+<tr class="pair-row" data-search="08_16 斜木七基 蜂乃屋凪 タンデムおねだり"><td class="chars">斜木七基<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">タンデムおねだり</td></tr>
+<tr class="pair-row" data-search="08_17 斜木七基 白光糖衣 鳴りやまないラブソング"><td class="chars">斜木七基<span class="times"> × </span>白光糖衣</td><td class="pair-name">鳴りやまないラブソング</td></tr>
+<tr class="pair-row" data-search="08_18 斜木七基 白光琉衣 トサカミュージック"><td class="chars">斜木七基<span class="times"> × </span>白光琉衣</td><td class="pair-name">トサカミュージック</td></tr>
+<tr class="pair-row" data-search="08_19 斜木七基 棗夜鷹 深煎り焙煎珈琲部"><td class="chars">斜木七基<span class="times"> × </span>棗夜鷹</td><td class="pair-name">深煎り焙煎珈琲部</td></tr>
+<tr class="pair-row" data-search="08_20 斜木七基 夜半子タろ 店内プレイリスト担当"><td class="chars">斜木七基<span class="times"> × </span>夜半子タろ</td><td class="pair-name">店内プレイリスト担当</td></tr>
+<tr class="pair-row" data-search="09_10 輝矢宗氏 久楽間潮 熟年幼馴染"><td class="chars">輝矢宗氏<span class="times"> × </span>久楽間潮</td><td class="pair-name">熟年幼馴染</td></tr>
+<tr class="pair-row" data-search="09_11 輝矢宗氏 北片來人 UFOを待ちわびる会"><td class="chars">輝矢宗氏<span class="times"> × </span>北片來人</td><td class="pair-name">UFOを待ちわびる会</td></tr>
+<tr class="pair-row" data-search="09_12 輝矢宗氏 畔川幾成 輝矢部屋新弟子入門"><td class="chars">輝矢宗氏<span class="times"> × </span>畔川幾成</td><td class="pair-name">輝矢部屋新弟子入門</td></tr>
+<tr class="pair-row" data-search="09_13 輝矢宗氏 夏焼千弥 つよつよコラボゲスト"><td class="chars">輝矢宗氏<span class="times"> × </span>夏焼千弥</td><td class="pair-name">つよつよコラボゲスト</td></tr>
+<tr class="pair-row" data-search="09_14 輝矢宗氏 木ノ内太緒 固形石鹸連盟"><td class="chars">輝矢宗氏<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">固形石鹸連盟</td></tr>
+<tr class="pair-row" data-search="09_15 輝矢宗氏 百目鬼潜 新味プロテイン研究会"><td class="chars">輝矢宗氏<span class="times"> × </span>百目鬼潜</td><td class="pair-name">新味プロテイン研究会</td></tr>
+<tr class="pair-row" data-search="09_16 輝矢宗氏 蜂乃屋凪 ランドリーお手伝い"><td class="chars">輝矢宗氏<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">ランドリーお手伝い</td></tr>
+<tr class="pair-row" data-search="09_17 輝矢宗氏 白光糖衣 天体観測フレンズ"><td class="chars">輝矢宗氏<span class="times"> × </span>白光糖衣</td><td class="pair-name">天体観測フレンズ</td></tr>
+<tr class="pair-row" data-search="09_18 輝矢宗氏 白光琉衣 ぶらり鉄オタペア"><td class="chars">輝矢宗氏<span class="times"> × </span>白光琉衣</td><td class="pair-name">ぶらり鉄オタペア</td></tr>
+<tr class="pair-row" data-search="09_19 輝矢宗氏 棗夜鷹 城巡り友の会"><td class="chars">輝矢宗氏<span class="times"> × </span>棗夜鷹</td><td class="pair-name">城巡り友の会</td></tr>
+<tr class="pair-row" data-search="09_20 輝矢宗氏 夜半子タろ 市民とヨロヅ…?"><td class="chars">輝矢宗氏<span class="times"> × </span>夜半子タろ</td><td class="pair-name">市民とヨロヅ…?</td></tr>
+<tr class="pair-row" data-search="10_11 久楽間潮 北片來人 バスボムしゅわリスト"><td class="chars">久楽間潮<span class="times"> × </span>北片來人</td><td class="pair-name">バスボムしゅわリスト</td></tr>
+<tr class="pair-row" data-search="10_12 久楽間潮 畔川幾成 ロボ愛護過激派"><td class="chars">久楽間潮<span class="times"> × </span>畔川幾成</td><td class="pair-name">ロボ愛護過激派</td></tr>
+<tr class="pair-row" data-search="10_13 久楽間潮 夏焼千弥 底なし中毒プリン沼"><td class="chars">久楽間潮<span class="times"> × </span>夏焼千弥</td><td class="pair-name">底なし中毒プリン沼</td></tr>
+<tr class="pair-row" data-search="10_14 久楽間潮 木ノ内太緒 信頼のギルメン"><td class="chars">久楽間潮<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">信頼のギルメン</td></tr>
+<tr class="pair-row" data-search="10_15 久楽間潮 百目鬼潜 毒も前菜、 蜜の味"><td class="chars">久楽間潮<span class="times"> × </span>百目鬼潜</td><td class="pair-name">毒も前菜、 蜜の味</td></tr>
+<tr class="pair-row" data-search="10_16 久楽間潮 蜂乃屋凪 アクアリウムボーイズ"><td class="chars">久楽間潮<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">アクアリウムボーイズ</td></tr>
+<tr class="pair-row" data-search="10_17 久楽間潮 白光糖衣 ツンデレお菓子セミナー"><td class="chars">久楽間潮<span class="times"> × </span>白光糖衣</td><td class="pair-name">ツンデレお菓子セミナー</td></tr>
+<tr class="pair-row" data-search="10_18 久楽間潮 白光琉衣 キロちゃん親衛隊"><td class="chars">久楽間潮<span class="times"> × </span>白光琉衣</td><td class="pair-name">キロちゃん親衛隊</td></tr>
+<tr class="pair-row" data-search="10_19 久楽間潮 棗夜鷹 ボンボンショコラ契約"><td class="chars">久楽間潮<span class="times"> × </span>棗夜鷹</td><td class="pair-name">ボンボンショコラ契約</td></tr>
+<tr class="pair-row" data-search="10_20 久楽間潮 夜半子タろ 警戒度マキシマム"><td class="chars">久楽間潮<span class="times"> × </span>夜半子タろ</td><td class="pair-name">警戒度マキシマム</td></tr>
+<tr class="pair-row" data-search="11_12 北片來人 畔川幾成 激辛ラーメン道"><td class="chars">北片來人<span class="times"> × </span>畔川幾成</td><td class="pair-name">激辛ラーメン道</td></tr>
+<tr class="pair-row" data-search="11_13 北片來人 夏焼千弥 準レギュ配信ゲスト"><td class="chars">北片來人<span class="times"> × </span>夏焼千弥</td><td class="pair-name">準レギュ配信ゲスト</td></tr>
+<tr class="pair-row" data-search="11_14 北片來人 木ノ内太緒 キャリーよろしく"><td class="chars">北片來人<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">キャリーよろしく</td></tr>
+<tr class="pair-row" data-search="11_15 北片來人 百目鬼潜 プリモの成れ果て"><td class="chars">北片來人<span class="times"> × </span>百目鬼潜</td><td class="pair-name">プリモの成れ果て</td></tr>
+<tr class="pair-row" data-search="11_16 北片來人 蜂乃屋凪 おしどりツーリング"><td class="chars">北片來人<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">おしどりツーリング</td></tr>
+<tr class="pair-row" data-search="11_17 北片來人 白光糖衣 ときめき占星術サロン"><td class="chars">北片來人<span class="times"> × </span>白光糖衣</td><td class="pair-name">ときめき占星術サロン</td></tr>
+<tr class="pair-row" data-search="11_18 北片來人 白光琉衣 武闘派籠球部"><td class="chars">北片來人<span class="times"> × </span>白光琉衣</td><td class="pair-name">武闘派籠球部</td></tr>
+<tr class="pair-row" data-search="11_19 北片來人 棗夜鷹 爆笑飲み友達"><td class="chars">北片來人<span class="times"> × </span>棗夜鷹</td><td class="pair-name">爆笑飲み友達</td></tr>
+<tr class="pair-row" data-search="11_20 北片來人 夜半子タろ HAMAゴーストバスターズ"><td class="chars">北片來人<span class="times"> × </span>夜半子タろ</td><td class="pair-name">HAMAゴーストバスターズ</td></tr>
+<tr class="pair-row" data-search="12_13 畔川幾成 夏焼千弥 ギャル語拡張アプデ"><td class="chars">畔川幾成<span class="times"> × </span>夏焼千弥</td><td class="pair-name">ギャル語拡張アプデ</td></tr>
+<tr class="pair-row" data-search="12_14 畔川幾成 木ノ内太緒 双璧メインボーカルズ"><td class="chars">畔川幾成<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">双璧メインボーカルズ</td></tr>
+<tr class="pair-row" data-search="12_15 畔川幾成 百目鬼潜 スクラップ協定"><td class="chars">畔川幾成<span class="times"> × </span>百目鬼潜</td><td class="pair-name">スクラップ協定</td></tr>
+<tr class="pair-row" data-search="12_16 畔川幾成 蜂乃屋凪 ふらわあ配達員"><td class="chars">畔川幾成<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">ふらわあ配達員</td></tr>
+<tr class="pair-row" data-search="12_17 畔川幾成 白光糖衣 ちい&#x27;sケーキズ"><td class="chars">畔川幾成<span class="times"> × </span>白光糖衣</td><td class="pair-name">ちい&#x27;sケーキズ</td></tr>
+<tr class="pair-row" data-search="12_18 畔川幾成 白光琉衣 スパダリギャップ検証"><td class="chars">畔川幾成<span class="times"> × </span>白光琉衣</td><td class="pair-name">スパダリギャップ検証</td></tr>
+<tr class="pair-row" data-search="12_19 畔川幾成 棗夜鷹 雀士養成講座"><td class="chars">畔川幾成<span class="times"> × </span>棗夜鷹</td><td class="pair-name">雀士養成講座</td></tr>
+<tr class="pair-row" data-search="12_20 畔川幾成 夜半子タろ 探偵博士とメカ助手"><td class="chars">畔川幾成<span class="times"> × </span>夜半子タろ</td><td class="pair-name">探偵博士とメカ助手</td></tr>
+<tr class="pair-row" data-search="13_14 夏焼千弥 木ノ内太緒 ハードラックシンメ"><td class="chars">夏焼千弥<span class="times"> × </span>木ノ内太緒</td><td class="pair-name">ハードラックシンメ</td></tr>
+<tr class="pair-row" data-search="13_15 夏焼千弥 百目鬼潜 ストレイシープの作り方"><td class="chars">夏焼千弥<span class="times"> × </span>百目鬼潜</td><td class="pair-name">ストレイシープの作り方</td></tr>
+<tr class="pair-row" data-search="13_16 夏焼千弥 蜂乃屋凪 それいけ中卒ライフ"><td class="chars">夏焼千弥<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">それいけ中卒ライフ</td></tr>
+<tr class="pair-row" data-search="13_17 夏焼千弥 白光糖衣 推しと一つ屋根の下"><td class="chars">夏焼千弥<span class="times"> × </span>白光糖衣</td><td class="pair-name">推しと一つ屋根の下</td></tr>
+<tr class="pair-row" data-search="13_18 夏焼千弥 白光琉衣 不本意ペアルック"><td class="chars">夏焼千弥<span class="times"> × </span>白光琉衣</td><td class="pair-name">不本意ペアルック</td></tr>
+<tr class="pair-row" data-search="13_19 夏焼千弥 棗夜鷹 湯けむりロマン組"><td class="chars">夏焼千弥<span class="times"> × </span>棗夜鷹</td><td class="pair-name">湯けむりロマン組</td></tr>
+<tr class="pair-row" data-search="13_20 夏焼千弥 夜半子タろ 平成文化レクチャー"><td class="chars">夏焼千弥<span class="times"> × </span>夜半子タろ</td><td class="pair-name">平成文化レクチャー</td></tr>
+<tr class="pair-row" data-search="14_15 木ノ内太緒 百目鬼潜 宴会芸マジシャンズ"><td class="chars">木ノ内太緒<span class="times"> × </span>百目鬼潜</td><td class="pair-name">宴会芸マジシャンズ</td></tr>
+<tr class="pair-row" data-search="14_16 木ノ内太緒 蜂乃屋凪 象鼻メモリアラーズ"><td class="chars">木ノ内太緒<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">象鼻メモリアラーズ</td></tr>
+<tr class="pair-row" data-search="14_17 木ノ内太緒 白光糖衣 推しとの懸け橋マン"><td class="chars">木ノ内太緒<span class="times"> × </span>白光糖衣</td><td class="pair-name">推しとの懸け橋マン</td></tr>
+<tr class="pair-row" data-search="14_18 木ノ内太緒 白光琉衣 メラメラ格ゲー道場"><td class="chars">木ノ内太緒<span class="times"> × </span>白光琉衣</td><td class="pair-name">メラメラ格ゲー道場</td></tr>
+<tr class="pair-row" data-search="14_19 木ノ内太緒 棗夜鷹 雇われリア恋バーテン"><td class="chars">木ノ内太緒<span class="times"> × </span>棗夜鷹</td><td class="pair-name">雇われリア恋バーテン</td></tr>
+<tr class="pair-row" data-search="14_20 木ノ内太緒 夜半子タろ 肉まん恐怖症"><td class="chars">木ノ内太緒<span class="times"> × </span>夜半子タろ</td><td class="pair-name">肉まん恐怖症</td></tr>
+<tr class="pair-row" data-search="15_16 百目鬼潜 蜂乃屋凪 白百合とぺんべん草"><td class="chars">百目鬼潜<span class="times"> × </span>蜂乃屋凪</td><td class="pair-name">白百合とぺんべん草</td></tr>
+<tr class="pair-row" data-search="15_17 百目鬼潜 白光糖衣 禁断の果実あげようか"><td class="chars">百目鬼潜<span class="times"> × </span>白光糖衣</td><td class="pair-name">禁断の果実あげようか</td></tr>
+<tr class="pair-row" data-search="15_18 百目鬼潜 白光琉衣 あんしんフィルター発動"><td class="chars">百目鬼潜<span class="times"> × </span>白光琉衣</td><td class="pair-name">あんしんフィルター発動</td></tr>
+<tr class="pair-row" data-search="15_19 百目鬼潜 棗夜鷹 闇夜の常連客"><td class="chars">百目鬼潜<span class="times"> × </span>棗夜鷹</td><td class="pair-name">闇夜の常連客</td></tr>
+<tr class="pair-row" data-search="15_20 百目鬼潜 夜半子タろ JOKERsFamily"><td class="chars">百目鬼潜<span class="times"> × </span>夜半子タろ</td><td class="pair-name">JOKERsFamily</td></tr>
+<tr class="pair-row" data-search="16_17 蜂乃屋凪 白光糖衣 ハッピーサクリファイス"><td class="chars">蜂乃屋凪<span class="times"> × </span>白光糖衣</td><td class="pair-name">ハッピーサクリファイス</td></tr>
+<tr class="pair-row" data-search="16_18 蜂乃屋凪 白光琉衣 イライラ自家発電"><td class="chars">蜂乃屋凪<span class="times"> × </span>白光琉衣</td><td class="pair-name">イライラ自家発電</td></tr>
+<tr class="pair-row" data-search="16_19 蜂乃屋凪 棗夜鷹 花とカクテル"><td class="chars">蜂乃屋凪<span class="times"> × </span>棗夜鷹</td><td class="pair-name">花とカクテル</td></tr>
+<tr class="pair-row" data-search="16_20 蜂乃屋凪 夜半子タろ 強制共犯ドナー関係"><td class="chars">蜂乃屋凪<span class="times"> × </span>夜半子タろ</td><td class="pair-name">強制共犯ドナー関係</td></tr>
+<tr class="pair-row" data-search="17_18 白光糖衣 白光琉衣 溺愛依存ツインズ"><td class="chars">白光糖衣<span class="times"> × </span>白光琉衣</td><td class="pair-name">溺愛依存ツインズ</td></tr>
+<tr class="pair-row" data-search="17_19 白光糖衣 棗夜鷹 めぐるレーズンの環"><td class="chars">白光糖衣<span class="times"> × </span>棗夜鷹</td><td class="pair-name">めぐるレーズンの環</td></tr>
+<tr class="pair-row" data-search="17_20 白光糖衣 夜半子タろ 怪物ちゃんと怪物さん"><td class="chars">白光糖衣<span class="times"> × </span>夜半子タろ</td><td class="pair-name">怪物ちゃんと怪物さん</td></tr>
+<tr class="pair-row" data-search="18_19 白光琉衣 棗夜鷹 リカー・ビギナー"><td class="chars">白光琉衣<span class="times"> × </span>棗夜鷹</td><td class="pair-name">リカー・ビギナー</td></tr>
+<tr class="pair-row" data-search="18_20 白光琉衣 夜半子タろ 発明品品質管理くん"><td class="chars">白光琉衣<span class="times"> × </span>夜半子タろ</td><td class="pair-name">発明品品質管理くん</td></tr>
+<tr class="pair-row" data-search="19_20 棗夜鷹 夜半子タろ 盲点の窓をノックせよ"><td class="chars">棗夜鷹<span class="times"> × </span>夜半子タろ</td><td class="pair-name">盲点の窓をノックせよ</td></tr>
+   </tbody>
+  </table>
+  <div id="no-results">該当するペアが見つかりませんでした。</div>
+ </div>
+</main>
+<footer>18TRIP ペア名リスト</footer>
+<script>
+(function(){
+ var input=document.getElementById('search');
+ var tbody=document.getElementById('pair-list');
+ var rows=tbody.getElementsByTagName('tr');
+ var count=document.getElementById('count');
+ var empty=document.getElementById('no-results');
+ function filterRows(){
+  var query=(input.value || '').toLowerCase().replace(/^\\s+|\\s+$/g,'');
+  var visible=0;
+  for(var i=0;i<rows.length;i++){
+   var haystack=(rows[i].getAttribute('data-search') || '').toLowerCase();
+   var match=haystack.indexOf(query)!==-1;
+   rows[i].style.display=match?'':'none';
+   if(match){visible++;}
+  }
+  count.textContent=visible+'件表示中';
+  empty.style.display=visible===0?'block':'none';
+  document.querySelector('.table-wrap table').style.display=visible===0?'none':'table';
+ }
+ input.addEventListener('input',filterRows,false);
+ input.addEventListener('keyup',filterRows,false);
+ document.getElementById('clear').addEventListener('click',function(){
+  input.value='';
+  filterRows();
+  input.focus();
+ },false);
+})();
+</script>
+</body>
+</html>
